@@ -3,31 +3,33 @@ package com.example.demo.controller;
 import com.example.demo.entity.Patient;
 import com.example.demo.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/patients")
+@Controller
 public class PatientController {
 
     @Autowired
     private PatientRepository patientRepository;
 
-    // Home endpoint
+    // Homepage frontend
     @GetMapping("/")
     public String home() {
-        return "Hospital Backend is Running Successfully!";
+        return "index";
     }
 
     // Get all patients
-    @GetMapping
+    @ResponseBody
+    @GetMapping("/patients")
     public List<Patient> getAllPatients() {
         return patientRepository.findAll();
     }
 
-    // Add new patient
-    @PostMapping
+    // Add patient
+    @ResponseBody
+    @PostMapping("/patients")
     public Patient addPatient(@RequestBody Patient patient) {
         return patientRepository.save(patient);
     }
