@@ -1,5 +1,8 @@
-INSERT INTO PATIENT (ID, NAME, AGE) VALUES (1, 'Rahul', 22);
+INSERT INTO patients (id, name, age, disease)
+VALUES (1, 'Rahul', 22, 'Fever');
 
-INSERT INTO PATIENT (ID, NAME, AGE) VALUES (2, 'Priya', 25);
+INSERT INTO patients (id, name, age, disease)
+VALUES (2, 'Anjali', 25, 'Cold');
 
-INSERT INTO PATIENT (ID, NAME, AGE) VALUES (3, 'Aman', 30);
+INSERT INTO patients (id, name, age, disease)
+VALUES (3, 'Rohit', 30, 'Diabetes');
