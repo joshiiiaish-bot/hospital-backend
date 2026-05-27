@@ -223,27 +223,12 @@
                 <th>Disease</th>
             </tr>
 
-            <tr>
-                <td>1</td>
-                <td>Rahul</td>
-                <td>22</td>
-                <td>Fever</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Ananya</td>
-                <td>25</td>
-                <td>Cold</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Vikram</td>
-                <td>40</td>
-                <td>Diabetes</td>
-            </tr>
-
+            <tr th:each="patient : ${patients}">
+    <td th:text="${patient.id}"></td>
+    <td th:text="${patient.name}"></td>
+    <td th:text="${patient.age}"></td>
+    <td th:text="${patient.disease}"></td>
+</tr>
         </table>
 
     </div>
